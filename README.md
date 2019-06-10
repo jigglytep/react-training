@@ -1,3 +1,2 @@
-# react-training
-
-https://www.youtube.com/watch?v=431EvDGKwks
+set up back end call for GET_ITEMS
+https://youtu.be/431EvDGKwks?t=388
