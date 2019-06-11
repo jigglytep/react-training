@@ -1,11 +1,10 @@
-import uuid from "uuid";
 import {
   GET_ITEMS,
   ADD_ITEMS,
   DELETE_ITEM,
   ITEMS_LOADING
 } from "../actions/types";
-import { loadavg } from "os";
+import { loading } from "os";
 
 const initialState = {
   items: [],
@@ -21,16 +20,16 @@ export default function(state = initialState, action) {
         loading: false
       };
 
-    case DELETE_ITEM:
-      return {
-        ...state,
-        items: state.items.filter(item => item.id != action.payload)
-      };
-
     case ADD_ITEMS:
       return {
         ...state,
         items: [action.payload, ...state.items]
+      };
+
+    case DELETE_ITEM:
+      return {
+        ...state,
+        items: state.items.filter(item => item._id != action.payload)
       };
 
     case ITEMS_LOADING:
